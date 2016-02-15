@@ -1,4 +1,4 @@
-## This function creats a list with 4 elements named set,get,setinverse,and getinverse which are the 4 functions respectively that will create 
+## This function creates a list with 4 elements named set,get,setinverse,and getinverse which are the 4 functions respectively that will create 
 ## and cache(ie store) the inverse of a given matrix outside of the current local environment of the function for a given matrix so that it can 
 ## be called again if needed, thus not having to recalculate it. This improves the operational efficiency of the process/function.
 
