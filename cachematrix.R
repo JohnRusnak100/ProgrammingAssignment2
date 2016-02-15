@@ -1,6 +1,7 @@
 ## This function creates a list with 4 elements named set,get,setinverse,and getinverse which are the 4 functions respectively that will create 
 ## and cache(ie store) the inverse of a given matrix outside of the current local environment of the function for a given matrix so that it can 
 ## be called again if needed, thus not having to recalculate it. This improves the operational efficiency of the process/function.
+## Function assumes matrix is invertible, thus it's inverse exists and is unique.
 
 ## This function creates the list of the 4 functions. The set function contols the process by initializing the objects and triggers new 
 ## calculations when the matrix changes. get will return the matrix, while the setinverse and getinverse set/return the inverse for given matrix.
@@ -20,7 +21,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## cacheSolve is a function that will return the cached inverse for a given matrix if that inverse already exists(ie is not NULL) or calculates
 ## it using the solve function and then sets and caches it using the setinverse function so that it can be called later if needed.
-## Functions assumes matrix is invertible, thus it's inverse exists and is unique.
+
 
 cacheSolve <- function(x, ...) {
         inverse<-x$getinverse()
@@ -33,6 +34,7 @@ cacheSolve <- function(x, ...) {
         x$setinverse(inverse)
         inverse
 }
+
 ## Example of function creating cache inverse and confirming matrix %*% inverse equals identity matrix
 ##
 ## > setwd("~/ProgrammingAssignment2")
